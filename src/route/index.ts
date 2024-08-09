@@ -1,7 +1,7 @@
 import { Router } from "express";
 import authRoutes from "./auth";
-import profileRoutes from "./profile";
+import chatAppRoutes from "./chat-app/index";
 const router = Router();
 router.use("/auth", authRoutes);
-router.use("/profile", profileRoutes);
+router.use("/chat-buddies", chatAppRoutes);
 export default router;
