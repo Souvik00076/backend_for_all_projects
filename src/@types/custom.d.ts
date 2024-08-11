@@ -6,7 +6,7 @@ export type TDecodeToken = {
 declare global {
   namespace Express {
     interface Request {
-      user?: TDecodeToken;
+      user: TDecodeToken;
     }
   }
 }

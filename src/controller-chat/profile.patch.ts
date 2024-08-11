@@ -1,26 +1,23 @@
-import { Request, Response } from "express";
-import { USER_STATUS } from "../../constants";
-type TRequest = {
-  status: USER_STATUS;
-  location: string;
-  description: string;
-  showLastSeen: boolean;
-  displayStatus: boolean;
-  readRecipient: boolean;
+import { NextFunction, Request, Response } from "express";
+import { FilterQuery } from "mongoose";
+import { TUser } from "../@types/schema_types";
+import { USER_STATUS } from "../constants";
+type TBody = {
+  status: string;
 };
-export const patchProfile = async (
-  {
-    body: {
-      status,
-      location,
-      description,
-      showLastSeen,
-      displayStatus,
-      readRecipient,
-    },
-  }: Request<unknown, unknown, TRequest, unknown>,
+export const chat_patchProfile = async (
+  { user, body: { status } }: Request<unknown, unknown, TBody, unknown>,
   res: Response,
+  next: NextFunction,
 ) => {
   try {
-  } catch (error) {}
+    const filter: FilterQuery<TUser> = {
+      _id: user.userId,
+    };
+
+    if (status) {
+    }
+  } catch (error) {
+    next(error);
+  }
 };

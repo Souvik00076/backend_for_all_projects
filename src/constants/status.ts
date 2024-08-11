@@ -1,6 +1,7 @@
 export enum USER_STATUS {
-  ACTIVE = "ACTIVE",
-  AWAY = "AWAY",
+  ACTIVE = "Active",
+  AWAY = "Away",
+  INACTIVE = "Inactive",
 }
 export enum MESSAGE_TYPE {
   TEXT = "TEXT",

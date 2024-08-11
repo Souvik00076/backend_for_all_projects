@@ -32,6 +32,7 @@ export const loginAuth = async (
       {
         email,
         userName: user.userName,
+        userId: user._id,
       },
       process.env.JWT_SECRET as string,
       { expiresIn: "1h" },

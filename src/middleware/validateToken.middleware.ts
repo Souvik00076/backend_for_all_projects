@@ -13,6 +13,7 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
       token,
       process.env.JWT_SECRET as string,
     ) as TDecodeToken;
+    req.user = decoded;
     if (!decoded) {
       throw new Forbidden("Unauthenticated User");
     }
